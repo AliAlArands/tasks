@@ -30,15 +30,64 @@ const menuItems = document.querySelectorAll('.menu-item');
 // window.addEventListener('DOMContentLoaded', () => {
 //     ulElement.innerHTML = displayItems(liItmes);
 // })
-    
+const cards = document.querySelectorAll('.card');
 
+let selectedCategory = null;
+
+// const allButton = document.querySelector('#all');
+// console.log(allButton);
+const categories = document.querySelectorAll('.category');
+categories.forEach((category) => {
+    // if (category.innerText !== 'All Posts'){
+    //     category.classList.remove('selected-category');
+    // }
+    
+    // console.log(category.innerText)
+    category.addEventListener(('click') ,() => {
+        let categroyValue = category.innerText.toLowerCase();
+        categories.forEach((category) => {
+            category.classList.remove('selected-category') 
+            console.log('i am here')
+        });
+        category.classList.add('selected-category');
+        
+        // category.classList.add('selected-category');
+        // console.log(categroyValue)
+        if (category.innerText === 'All Posts') {
+            categroyValue = ''
+            // console.log('true');
+        }
+        cards.forEach((card) =>  displayCards(card, categroyValue)); 
+    })
+})
+
+
+const displayCards  = (card, searchValue) => {
+    const cardTitle = card.querySelector('.card__title').innerText.toLowerCase();
+    if (!cardTitle.includes(searchValue)) {
+        card.style.display = 'none';
+    }
+    // if (searchValue === '') card.style.display = 'block';
+    else (
+        card.style.display = 'block'
+    )
+}
+// console.log(cards);
+const searchBox = document.querySelector('.search');
+searchBox.addEventListener('keyup', () => {
+    const searchValue = searchBox.value.toLowerCase();
+    // console.log(searchValue);
+    allButton.classList.remove('selected-category');
+    cards.forEach((card) => displayCards(card, searchValue))
+
+})
 
 
 let selectedItem = null;
 menuItems.forEach(
     (menuItem) => menuItem.addEventListener('click', () => 
         {
-            console.log(menuItem.children[0])
+            // console.log(menuItem.children[0])
             menuItem.children[0].classList.toggle('b');
 
             // console.log(selectedItem, menuItem)
