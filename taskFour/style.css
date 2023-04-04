@@ -137,6 +137,10 @@ p {
   color: var(--secondary-color);
 }
 
+.choices  div {
+  cursor: pointer;
+}
+
 .selected {
   color: #ff8500;
 }
@@ -146,6 +150,9 @@ p {
   margin-left: 15px;
 }
 
+.languages  span {
+  cursor: pointer;
+}
 /* foooter */
 
 .footer-menu {
