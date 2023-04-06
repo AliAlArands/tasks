@@ -84,7 +84,7 @@ searchBox.addEventListener('keyup', () => {
 
 
 let selectedItem = null;
-console.log(selectedItem);
+// console.log(selectedItem);
 menuItems.forEach(
     (menuItem) => menuItem.addEventListener('click', () => 
         {
@@ -115,3 +115,19 @@ menuItems.forEach(
     )
 
 )
+
+
+const linkGroups = document.querySelectorAll('.title');
+// console.log(linkGroups);
+
+linkGroups.forEach(
+    (link) => { 
+        const chevron = link.querySelector('.fa-chevron-up');
+        // const list = document.querySelector('.details');
+        chevron.addEventListener('click', () => {
+            chevron.classList.toggle('rotate-chevron-up');
+            const list = chevron.parentElement.parentElement.parentElement;
+            const listElements = list.querySelector('.details');
+            listElements.classList.toggle('display-links');
+        })
+})
