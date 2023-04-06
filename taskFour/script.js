@@ -84,9 +84,11 @@ searchBox.addEventListener('keyup', () => {
 
 
 let selectedItem = null;
+console.log(selectedItem);
 menuItems.forEach(
     (menuItem) => menuItem.addEventListener('click', () => 
         {
+            // selectedItem.children[0].classList.remove('b');
             // console.log(menuItem.children[0])
             menuItem.children[0].classList.toggle('b');
 

@@ -192,12 +192,20 @@ p {
   size: 1.2rem;
 }
 
+.end p {
+  /* flex-grow: 1; */
+  white-space: nowrap;
+}
+
 .line {
-  color: white;
-  height: 3px;
+  background-color: white;
+  height: 1px;
   display: inline-block;
-  width: 78%;
-  margin: 5px;
+  /* width: 100px; */
+  flex: 1;
+  /* flex-grow: 20; */
+  margin: 0 5px  ;
+  margin-right: 0;
 }
 
 /* main */
