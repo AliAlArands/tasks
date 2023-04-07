@@ -34,7 +34,7 @@ const cards = document.querySelectorAll('.card');
 
 let selectedCategory = null;
 
-// const allButton = document.querySelector('#all');
+const allButton = document.querySelector('#all');
 // console.log(allButton);
 const categories = document.querySelectorAll('.category');
 categories.forEach((category) => {

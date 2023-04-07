@@ -396,6 +396,12 @@ p {
   border-bottom: 1px solid black;
 }
 
+@media screen and (max-width: 850px){
+  .search-box{
+    width: 80%;
+  }
+}
+
 .gray {
   font-size: 2rem;
   margin-right: 2rem;
