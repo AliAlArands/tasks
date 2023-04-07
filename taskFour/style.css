@@ -33,9 +33,12 @@ nav {
     display: none;
   }
 
-  nav .choices {
+  /* nav .choices {
     display: none;
-  }
+  } */
+  /* .choices .languages {
+    display: none;
+  } */
 }
 
 .nav-container {
@@ -74,6 +77,8 @@ nav {
 .dropmenulist li:last-child {
   justify-content: flex-end;
 }
+
+
 .dropmenulist li .fa-chevron-down {
   color: white;
 }
@@ -116,7 +121,6 @@ footer {
   background-color: black;
   color: white;
   padding-bottom: 2rem;
-  /* height: 21rem; */
 }
 
 ul {
@@ -128,11 +132,8 @@ ul {
 
 a {
   text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  color: rgb(233, 228, 228);
+  cursor: pointer;
+  /* color: white; */
 }
 
 p {
@@ -197,8 +198,9 @@ p {
   margin: 0 1rem;
   font-size: 1.6rem;
   text-transform: capitalize;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgb(40, 40, 40);
+  font-weight: bold;
 }
 
 .register {
@@ -208,27 +210,33 @@ p {
   color: var(--secondary-color);
 }
 
-.choices div {
-  cursor: pointer;
-}
 
-.selected {
-  color: #ff8500;
-}
 
 .languages {
   margin-top: 5px;
-  margin-left: 15px;
+  margin-left: 20px;
+}
+
+.languages .selected {
+  color: #ff8500;
 }
 
 .languages span {
   cursor: pointer;
+  color: black;
+
 }
 
 #list {
   font-size: 3rem;
   color: black;
   display: block;
+}
+
+.btn-log {
+  background-color: white;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
 }
 
 @media screen and (min-width: 850px) {
@@ -272,6 +280,15 @@ p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   transition: all 0.5s linear;
+}
+
+.details li a {
+  color: white;
+  transition: all 0.3s linear;
+}
+
+.details li a:hover {
+  color: rgba(255, 255, 255, 0.432);
 }
 
 .fa-chevron-up {
