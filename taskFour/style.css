@@ -15,12 +15,87 @@ body {
 }
 
 nav {
+  /* top: 2rem; */
   display: flex;
-  /* flex-direction: ; */
+  flex-direction: column;
   justify-content: space-between;
   padding: 1rem 2.4rem;
   align-items: center;
-  /* height: 4.8rem; */
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    position: fixed;
+  }
+  nav #menu {
+    display: none;
+  }
+
+  nav .choices {
+    display: none;
+  }
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* .dropdown {
+  transition: all 10s linear;
+
+} */
+
+.dropmenulist {
+  display: none;
+  height: 0;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 100vw;
+  transition: all 0.5s linear;
+}
+
+.dropmenulist li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 1rem 3rem;
+  border-bottom: 1px solid white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  /* height: 0; */
+}
+
+.dropmenulist li:last-child {
+  justify-content: flex-end;
+}
+.dropmenulist li .fa-chevron-down {
+  color: white;
+}
+
+.dropmenulist li:hover, .dropmenulist li:last-child:hover {
+  color: white;
+} 
+
+.show-dropdown {
+  display: block;
+  height: auto;
+  transition: all 0.5s linear;
+
+}
+
+@media screen and (min-width: 850px) {
+  .show-dropdown {
+    display: none;
+    /* height: auto; */
+  }
+  /* .dropdown .dropmenulist {
+  } */
 }
 
 main {
@@ -30,8 +105,8 @@ main {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  /* height: 110vh; */
   padding: 6.4rem 6.5rem;
+  /* transition: all 0.5s ease-in; */
 }
 
 main > h1 {
@@ -149,6 +224,18 @@ p {
 .languages span {
   cursor: pointer;
 }
+
+#list {
+  font-size: 3rem;
+  color: black;
+  display: block;
+}
+
+@media screen and (min-width: 850px) {
+  #list {
+    display: none;
+  }
+}
 /* footer */
 
 .footer-menu {
@@ -179,14 +266,12 @@ p {
 
 .details {
   padding-left: 0;
-
 }
 
 .details li {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   transition: all 0.5s linear;
-
 }
 
 .fa-chevron-up {
@@ -212,7 +297,6 @@ p {
     font-size: 1rem;
   }
   .display-links {
-
     display: block;
     margin-bottom: 2rem;
   }
@@ -365,12 +449,13 @@ p {
   /* margin: auto; */
   /* align-self: center; */
   /* transition: all 0.5s linear; */
-  box-shadow: 0 0 5px 0 black;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.315);
   transition: all 0.3s linear;
 }
 
 .card:hover {
-  box-shadow: 0 0 10px 0 rgb(54, 52, 52);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px 5px rgba(54, 52, 52, 0.63);
 }
 
 @media screen and (max-width: 1380px) {

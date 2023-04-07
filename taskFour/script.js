@@ -47,7 +47,7 @@ categories.forEach((category) => {
         let categroyValue = category.innerText.toLowerCase();
         categories.forEach((category) => {
             category.classList.remove('selected-category') 
-            console.log('i am here')
+            // console.log('i am here')
         });
         category.classList.add('selected-category');
         
@@ -88,28 +88,32 @@ let selectedItem = null;
 menuItems.forEach(
     (menuItem) => menuItem.addEventListener('click', () => 
         {
-            // selectedItem.children[0].classList.remove('b');
-            // console.log(menuItem.children[0])
+            // first make the clicked element bold 
+            // and if the same item clicked twice it removes the classes 'b' and 'rotate'.
             menuItem.children[0].classList.toggle('b');
-
-            // console.log(selectedItem, menuItem)
-            if (selectedItem !== null)
-            {
-                if (selectedItem !== menuItem) {
-                    selectedItem.children[0].classList.toggle('b');
-                    const chevronDown = selectedItem.querySelector('.fa-chevron-down');
-                    if (chevronDown !== null){
-                    chevronDown.classList.toggle('rotate');
-                    chevronDown.classList.toggle('b');
-                    }
-                };
-            }    
-            selectedItem = menuItem;
             const chevronDown = menuItem.querySelector('.fa-chevron-down');
             if (chevronDown !== null){
             chevronDown.classList.toggle('rotate');
             chevronDown.classList.toggle('b');
         }
+            if (selectedItem !== null)
+            {
+                if (selectedItem !== menuItem) {
+                    selectedItem.children[0].classList.remove('b');
+                    const chevronDown = selectedItem.querySelector('.fa-chevron-down');
+                    if (chevronDown !== null){
+                        // console.log(chevronDown)
+                        chevronDown.classList.remove('rotate');
+                        chevronDown.classList.remove('b');
+                    }
+                };
+            }    
+            // here i store the element in a variable so if the next clicke if the element
+            // is not the same element clicked last item => the above if statments should remove the classes
+            // 'b' and 'rotate' from the last time element.  
+            selectedItem = menuItem;
+
+            
         }
 
     )
@@ -131,3 +135,15 @@ linkGroups.forEach(
             listElements.classList.toggle('display-links');
         })
 })
+
+const listButton = document.querySelector('#list');
+
+const dropDownMenuList = document.querySelector('.dropmenulist');
+listButton.addEventListener(('click'), () => {
+    dropDownMenuList.classList.toggle('show-dropdown');
+})
+
+
+// dropDownMenuList.addEventListener(('click', () => {
+//     dropDownMenuList.style.display = 'block'
+// }))
