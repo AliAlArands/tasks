@@ -220,7 +220,8 @@ aside .fa-xmark {
 }
 
 .nav button {
-  margin-left: 95%;
+  margin-left: auto;
+  padding-bottom: 1rem;
 }
 .setting {
   font-size: 1.5rem;
@@ -269,7 +270,7 @@ aside .fa-xmark {
     display: none;
   }
 
-  .hero-img {
+  .hero {
     
     background-image: url(./imgs/face.png);
     background-size: contain;
@@ -560,23 +561,28 @@ aside .fa-xmark {
 /* Clients */
 
 .clients {
+  /* margin-top: 10rem; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .cleint {
   width: calc((100vw - 20vw) / 3);
 }
-.client-img {
-  object-fit: cover;
-}
 
 @media screen and (max-width: 950px) {
   .clients {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
-
+  
   .cleint {
-    width: calc((100vw - 20vw) / 2);
+    width: calc((100vw - 20vw - 2rem) / 2);
+  }
+  
+  .client-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
