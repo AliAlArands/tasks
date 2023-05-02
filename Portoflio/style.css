@@ -493,12 +493,16 @@ aside .fa-xmark {
 .arrow {
   font-size: 1rem;
   padding: 1rem;
-  color: white;
+  color: rgb(255, 255, 255, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
   /* background: transparent; */
   z-index: 3;
+  transition: var(--transition);
 }
 
+.arrow:hover {
+  color: white;
+}
 .left {
   /* background-color: white; */
   display: none;
@@ -516,11 +520,19 @@ aside .fa-xmark {
   z-index: 3;
 }
 
+@media screen and (max-width:780px) {
+  .modal img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+  }
+}
+
 .btn-close {
   display: none;
   position: fixed;
-  top: 10px;
-  right: 40px;
+  top: 5px;
+  right: 10px;
   color: white;
   font-size: 30px;
   font-weight: bold;

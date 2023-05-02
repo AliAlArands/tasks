@@ -49,6 +49,7 @@ projects.forEach((project) => {
                 leftBtn.classList.add('show-btns');
                 rightBtn.classList.add('show-btns');
                 closeBtn.classList.add('show-btns');
+                navBtn.style.display = "none";
 
                 
                 closeBtn.addEventListener(('click'), () => {
@@ -61,6 +62,7 @@ projects.forEach((project) => {
                         leftBtn.classList.remove('show-btns');
                         rightBtn.classList.remove('show-btns');
                         closeBtn.classList.remove('show-btns');
+                        navBtn.style.display = "block";
 
                 });
                 leftBtn.addEventListener(('click'), () => {
